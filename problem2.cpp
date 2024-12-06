@@ -6,7 +6,7 @@ using namespace std;
 int sumEvenNumbers(const vector<int>& nums) {
     int s=0;    
     for (int n : nums){
-        if (n%2 == 0){    sum += n;}
+        if (n%2 == 0){    s+= n;}
     }
     return s;
 }

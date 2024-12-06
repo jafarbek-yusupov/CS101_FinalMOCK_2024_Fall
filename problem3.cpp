@@ -20,7 +20,7 @@ void reverseArray(int* a, int ln){
 
 double calculateAverage(int* a, int ln){
     int s = 0;    for (int i=0; i<ln; i++){    s+= *(a+i);}
-    return static_cast<double>(s)/ln;
+    return double(s)/ln;
 }
 
 int main(){

@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-int lcs(const vector<int>& a){
+int longestConsecutiveSubsequence(const vector<int>& a){
     if (a.empty()){ return 0;}
     int mx = 1, crnt = 1;
     for (int i = 1; i<a.size(); i++){
@@ -15,6 +15,6 @@ int lcs(const vector<int>& a){
 int main() {
     vector<int> a;    int n;
     while(cin >> n && n!=-1){    a.push_back(n);}
-    cout << "Length of longest consecutive subsequence: " << lcs(a) << endl;
+    cout << "Length of longest consecutive subsequence: " << longestConsecutiveSubsequence(a) << endl;
     return 0;
 }

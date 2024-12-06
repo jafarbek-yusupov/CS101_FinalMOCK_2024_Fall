@@ -1,20 +1,30 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
-int longestConsecutiveSubsequence(const vector<int>& a){
-    if (a.empty()){ return 0;}
-    int mx = 1, crnt = 1;
-    for (int i = 1; i<a.size(); i++){
-        if (a[i-1]==a[i]){    crnt++;} 
-        else{    mx = max(mx, crnt);    crnt = 1;}
+int sumEvenNumbers(const vector<int>& nums) {
+    int s=0;    
+    for (int n : nums){
+        if (n%2 == 0){    sum += n;}
     }
-    return max(mx, crnt);
+    return s;
+}
+
+int longestConsecutiveSubsequence(const vector<int>& nums) {
+    if (nums.empty()){ return 0;}
+    int ml = 1, cl = 1;
+    for (int i = 1; i<nums.size(); ++i) {
+        if (nums[i] == nums[i - 1]){    cl++;} 
+        else{    ml = max(ml, cl);    cl = 1;}
+    }
+    return max(ml, cl);
 }
 
 int main() {
-    vector<int> a;    int n;
-    while(cin >> n && n!=-1){    a.push_back(n);}
-    cout << "Length of longest consecutive subsequence: " << longestConsecutiveSubsequence(a) << endl;
+    vector<int> nums;    int n;
+    while (true){    cin >> n;    if (n == -1){ break;}    nums.push_back(n);}
+    cout << "Sum of even numbers: " << sumEvenNumbers(nums) << endl;
+    cout << "Length of longest consecutive subsequence: " << longestConsecutiveSubsequence(nums) << endl;
     return 0;
 }
